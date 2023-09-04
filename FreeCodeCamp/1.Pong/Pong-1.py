@@ -1,0 +1,38 @@
+import pygame
+
+pygame.init()
+
+#start Initial beginning Parameters
+width, height = 1000, 600
+wn = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Pong-1")
+run = True
+
+#colours
+RED = (255, 0, 0) #RED color with rgb
+GREEN = (0, 255, 0) #GREEN color with rgb
+BLUE = (0, 0, 255) #BLUE color with rgb
+WHITE = (255, 255, 255) #WHITE color with rgb
+
+#Logic for the ball
+radius = 15
+ball_x, ball_y = width/2 - radius, height/2 - radius
+vel_x, vel_y = 0.5, 0.5
+
+#for the paddles
+paddle_width, paddle_height = 20, 120 #x axis and y axis
+paddle_y = paddle_y1 = height/2 - paddle_height/2
+paddle_x, paddle_X = 100 - paddle_width/2, width - (100 - paddle_width/2)
+paddle_vel = paddle_vel1 = 0
+
+#for the gadgets
+gad = act = 0
+g_left = G_left = 3
+#main loop
+while run:
+    wn.fill(BLACK)
+    
+    #for the inputs
+    for i in pygame.event.get():
+        if i.type == pygame.QUIT:
+            run = False
